@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    background-color: #512D6D;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+
+
+.titulo {                           
+    color: #00C1D4;
+    width: 580px;
+    height: 24;
+    font-size: 42px;
+
+    /*Se alinean items con flex*/
+    align-items: center; 
+    display: flex;  
+    justify-content: center;
+}
+
+.subtitulo{
+    color: #EEEEEE;
+}
+
+#sel-mascota{                   /*Se selecciona la etiqueta padre*/
+    display: flex;              /* Le indicamos a CSS que vamos a reabajr con flex para este elemento*/
+    flex-direction: column;     /* Se posicionan los elementos de forma vertical*/
+    justify-content: center;    /* Se alinean los elemento de forma vertical*/
+    align-items: center;        /* Se alinean los elemento de forma horizontal */
+}
+
+.tarjetas, .tarjetas-ataques{
+    display: flex;
+    gap: 10px;              /* gap sirve para dar un espaciado*/
+}
+
+
+
+.tarjeta-de-mokepon{            /* Se crea class para modificar las cajas de los mokepones*/
+
+    width: 150px;
+    height: 150px;
+    background: #00C1D4;
+    padding: 10px;
+    box-sizing: border-box;    /*El tamano del padding se alineara al borde*/
+    border: 1px solid #EEEEEE;  /* tamano   tipo de borde    color*/
+    color: #512D6D;
+    font-size: 14px;
+    border-radius: 20px;
+
+    /*Se alinean items con flex*/
+
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.tarjeta-de-mokepon img{            /* Asi se selecciona un elemento dentro de otro elemento*/
+
+    width: 90px;
+}
+
+#boton-mascota{                 /*Se editan valores predeterminados de un boton*/
+    width: 174px;
+    height: 32px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: #F8485E;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+}
+
+
+#sel-ataque{
+    
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.estilo-boton{
+
+    width: 136px;
+    height: 32px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #F8485E;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    
+}
+
+
+#mensajes{
+    width: 300px;
+    height: 104px;
+    background: #EEEEEE;
+    border: 2px solid #00C1D4;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+    color: #512D6D;
+    text-align: center;
+
+}
+
+#boton-reiniciar{
+    width: 136px;
+    height: 32px;
+    border: 2px solid #512D6D;
+    border-radius: 8px;
+    color: #EEEEEE;
+    background-color: #F8485E;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+.ataques{
+    display: grid;
+    grid-template-columns: 300px 300px;
+    color: #EEEEEE;
+    line-height: 24px;
+}
+
+input{
+    display: none;              /* Ocultamos los input radio*/
+}
+
+input:checked + label{                  /* :checked es una pseudoclase para modificar un elemnto cuando esta clickeado*/
+    background-color: #EEEEEE;
+}
+
+.ataques-jugador, .ataques-enemigo{                 /*Elmentos con grid y flex ya que son padre e hijos al mismo tiempo*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+@media (max-width: 480px){                      /*@media sirve para establecer el responsive design*/
+    .tarjetas, .tarjetas-ataques{
+        flex-direction: column;
+        
+    }
+
+    .titulo{
+        font-size: 28px;
+    }
+
+    .subtitulo{
+        font-size: 16px;
+    }
+
+    .ataques{
+        font-size: 12px;
+        grid-template-columns: 150px 150px;
+    }
+
+}

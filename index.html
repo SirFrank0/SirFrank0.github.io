@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta charset="utf-8" />
+        <title>Chimpokomon</title>
+        
+        <link rel="stylesheet" href="/styles.css">      <!--Se linkea archivo CSS-->
+        
+        <script src="/js/chimpokomon.js"></script>      <!--Se puede colocar de dos formas, al final del <body> (después de haber cargado todo el contenido de la página) o creando un evento en JS para que se ejecute al momento de cargar la página.-->
+    </head>
+    <body>
+
+        <section id="sel-mascota">
+
+            <h1 class="titulo"> Chimpokomon!</h1>                <!--Se agrega id para modificar la etiqueta con CSS-->
+
+            <h2 class="subtitulo">Elige a tu mascota:</h2>  
+            
+         <div class="tarjetas">
+
+            <input type="radio" name="mascota" id="hipodoge"/>                <!-- Se utiliza el atributo "name" para agrupar los radio, si no se hace esto, cuando se selecciona mas de un radio, estos van a quedar seleccionados simultaneamente -->
+            <label class="tarjeta-de-mokepon" for="hipodoge">                          <!--Se agrega el atributo "for" con el "id" del mnombre de la mascota para que al dir click encima del nombre se selccione el "radio"-->        
+                <p>Hipodoge</p>
+                <img src="/assets/pHqhVfx.png" alt="Hipodoge">
+            </label>    
+
+              
+            <input type="radio" name="mascota" id="capipepo"/>
+            <label class="tarjeta-de-mokepon" for="capipepo">
+                <p>Capipepo</p>
+                <img src="/assets/Ic_unlock_cpm_snakat.png" alt="Capipepo">
+           </label>  
+
+
+            <input type="radio"name="mascota" id="ratigueya"/>  
+            <label class="tarjeta-de-mokepon" for="ratigueya">
+                <p>Ratigueya</p>
+                <img src="/assets/Ic_unlock_cpm_velocirapstar.png" alt="Ratigueya">
+            </label>  
+            
+         </div>
+
+
+
+            <button id="boton-mascota">Seleccionar</button>
+
+        </section>
+
+        <section id="sel-ataque">
+
+            <h1 class="titulo"> Chimpokomon!</h1>              <!-- Se coloca otra vez el titulo para que aparezca cuando se selecciona la mascota-->
+
+
+            <h2 class="subtitulo">Elige tu ataque:</h2>  
+
+
+            <div class="tarjetas-ataques">                                         <!--Es una buena practica nunca dejar botones fuera de un contenedor-->
+                <button id="boton-fuego" class="estilo-boton">Fuego 🔥</button>
+                <button id="boton-agua"  class="estilo-boton">Agua 💧</button>
+                <button id="boton-tierra"  class="estilo-boton">Tierra 🌳</button>
+            </div>
+         
+
+     
+               <div id="mensajes">                                  <!--Seccion para ver el historial de los combates entre mascotas-->
+                    <p id="resultado">Buena suerte!</p>
+                    <section id="reiniciar">
+                        <button id="boton-reiniciar">Reiniciar</button>
+                    </section>                                        
+               </div>
+
+
+            <div class="ataques">
+                <div class="ataques-jugador">
+                    <p>Tu <span id="mascota-jugador"></span id> tiene <span id="vidas-jugador">3</span> vidas</p>                    <!--Se agrega SPAN para que el 3 vaya cambiando en funcion del codigo "Dinamico"-->
+                    <div id="ataques-del-jugador"></div>
+                </div>
+
+                <div class="ataques-enemigo">
+                    <p><span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>            <!--Se agerga id del contador de vidas para cambiarlo con JS-->  
+                    <div id="ataques-del-enemigo"></div>
+                </div>               
+            </div>
+
+            
+        </section>
+
+    </body>
+</html>
